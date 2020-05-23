@@ -1,0 +1,17 @@
+<x-header></x-header>
+<view style="padding-top:{{statusBarHeight*2+88+'rpx'}}">
+  <view class="search-box">
+    <input value="{{keyword}}" data-name="keyword" bindinput="inputBind" placeholder="搜索内容" placeholder-class="placeholder"></input>
+    <text bindtap="getData">搜索</text>
+  </view>
+  <view>
+    <view wx:for="{{list}}" class="list">
+      <view bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+        <view>{{item.province+item.code+'   '+item.car_type}}</view>
+        <view>{{item.mobile}}</view>
+        <view>{{item.date}}</view>
+        <view class="del" style="right:{{right+'rpx'}}"></view>
+      </view>
+    </view>
+  </view>
+</view>

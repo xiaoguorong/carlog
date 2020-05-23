@@ -6,6 +6,11 @@ Page({
   data: {
     title:'我的',
     isLogin:false,
+    count:{
+      customerCount:0,
+      goodsCount:0,
+      goodsAllCount:0
+    }
   },
   onShow(){
     if(wx.getStorageSync('token')){
@@ -13,17 +18,17 @@ Page({
       this.setData({
         isLogin:true,
       })
+      http.requestSync("/getData", 'GET', {}).then((res) => {
+        this.setData({
+          count: res.content
+        })
+      });
     }
     if (typeof this.getTabBar == 'function' && this.getTabBar()) {
       this.getTabBar().setData({
         select: 1
       })
     }
-    http.requestSync("/getData",'GET',{}).then((res)=>{
-      this.setData({
-        count:res.content
-      })
-    });
   },
   getPhoneNumber(e){
     wx.login({
@@ -37,7 +42,15 @@ Page({
           }
           http.requestSync("/getMobile",'POST',data).then(res=>{
             if(res.code == 200){
-
+              wx.showToast({
+                title: '登陆成功',
+                icon: 'none'
+              })
+              http.requestSync("/getData", 'GET', {}).then((res) => {
+                this.setData({
+                  count: res.content
+                })
+              });
             }
           })
         }

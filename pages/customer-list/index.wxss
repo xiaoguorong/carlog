@@ -1,0 +1,12 @@
+.list>view{
+  background:green;
+  position:relative;
+}
+.del{
+  width:200rpx;
+  height:100%;
+  position:absolute;
+  right:-200rpx;
+  top:0;
+  background: red;
+}

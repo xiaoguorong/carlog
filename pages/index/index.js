@@ -1,12 +1,17 @@
 import http from './../../common/http'
 import beHaviorData from '../../common/beHavior'
+import moment from './../../common/moment.js'
 var app = getApp();
 Page({
   behaviors: [beHaviorData.height],
   data: {
-    title:'校区管理',
+    title:'首页',
     isLogin:false,
-    userInfo:{},
+    count: {
+      customerCount: 0,
+      goodsAddCount: 0,
+      goodsRemoveCount: 0
+    }
   },
   goLogin(){
     wx.navigateTo({
@@ -17,8 +22,6 @@ Page({
     if(wx.getStorageSync('token')){
       this.setData({
         isLogin:true,
-        userInfo:wx.getStorageSync('userInfo'),
-        campus:wx.getStorageSync('campus')
       })
     }
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
@@ -33,20 +36,29 @@ Page({
       url: '/pages/article/index?index='+index,
     })
   },
-  getuserinfo(e){
-    if(e.detail.errMsg != 'getUserInfo:ok') return;
-    app.globalData.userInfo = e.detail.userInfo;
-    var data = {
-      session_key:app.globalData.sessionKey,
-      iv:e.detail.iv,
-      encryptedData:e.detail.encryptedData
-    }
-    http.requestSync("/wxuserinfo",'POST',data,(res)=>{
-      if(res.code == 200){
-        wx.switchTab({
-          url: './../personalCenter/index',
-        })
+  getData(e){
+    var index = e.currentTarget.dataset.index;
+    console.log(index)
+    if(index == 0){
+      var data = {
+        start: moment().startOf('day').valueOf()/1000,
+        end: (moment().endOf('day').valueOf()+1)/1000-1
       }
-    })
-  },
+    }else if(index == 1){
+      var data = {
+        start: moment().startOf('week').add(1, 'day').format('X'),
+        end: moment().endOf('week').add(1, 'day').format('X')
+      }
+    }else if(index == 2){
+      var data = {
+        start: moment().startOf('month').format('X'),
+        end: moment().endOf('month').format('X')
+      }
+    }
+    http.requestSync("/getCrm", 'GET', data).then((res) => {
+      this.setData({
+        count: res.content
+      })
+    });
+  }
 })

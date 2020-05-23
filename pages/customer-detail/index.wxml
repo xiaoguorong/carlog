@@ -1,0 +1,12 @@
+<x-header title="{{title}}"></x-header>
+  <view class="detail" style="padding-top:{{statusBarHeight*2+88+'rpx'}}">
+    <view>{{detail.province+detail.code}}</view>
+    <view>{{detail.car_type}}</view>
+    <view>{{detail.mobile}}</view>
+    <view>{{detail.type}}</view>
+    <view>{{detail.price}}</view>
+    <view>{{detail.date}}</view>
+    <view>{{detail.content}}</view>
+    <view>{{detail.create_time}}</view>
+    <view>{{detail.update_time}}</view>
+  </view>
