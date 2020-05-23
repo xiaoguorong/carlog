@@ -1,0 +1,40 @@
+.info{
+  margin:0 20rpx;
+  overflow: hidden;
+}
+.num{
+  display:flex;
+  padding:0 20rpx;
+  border-bottom:1px solid #F6F7F8;
+}
+.mobile{
+  padding:0 20rpx;
+}
+.num text:nth-of-type(1),.mobile text:nth-of-type(1){
+  font-size:32rpx;
+  font-weight:500;
+  color:#4D5764;
+  line-height:100rpx;
+  text-align: justify;
+}
+.num input{
+  margin-left:20rpx;
+  height:100rpx;
+  line-height:100rpx;
+  flex:1;
+  color:#353535;
+}
+.btn{
+  margin-top:60rpx;
+}
+.mobile input{
+  margin-left:35rpx;
+}
+.mobile text:nth-of-type(2){
+  font-size:32rpx;
+  font-weight:500;
+  color:#4D5764;
+  line-height:100rpx;
+  margin-left:35rpx;
+  flex:1;
+}

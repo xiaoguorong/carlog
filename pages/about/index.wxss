@@ -1,0 +1,33 @@
+.box{
+  width:100vw;
+  height:100vh;
+  background:#F6F7F8;
+}
+.logo{
+  background:#fff;
+  margin-top:64rpx;
+}
+.logo image{
+  margin:auto;
+  width:320rpx;
+  height:80rpx;
+}
+.des{
+  background:#fff;
+  padding:32rpx 34rpx 64rpx 34rpx;
+  font-size:32rpx;
+  color:rgba(53,53,53,1);
+  line-height:44rpx;
+}
+.website{
+  margin-top:28rpx;
+  padding-left:28rpx;
+  background:#fff;
+  line-height:108rpx;
+  font-size:32rpx;
+  color:rgba(53,53,53,1);
+}
+.website text{
+  margin-left:32rpx;
+  display:inline;
+}

@@ -1,0 +1,16 @@
+<view class="box">
+    <x-header title="{{title}}"></x-header>
+    <view class="info" style="padding-top:{{statusBarHeight*2+88+'rpx'}}">
+        <view class="num mobile">
+            <text>商品名称</text>
+            <input placeholder="请输入商品名称"  value="{{name}}" data-name="name" bindinput="inputBind" placeholder-class="placeholder"></input>
+        </view>
+        <view class="num mobile">
+            <text>已有数量</text>
+            <input placeholder="请输入已有数量"  value="{{count}}" data-name="count" bindinput="inputBind" placeholder-class="placeholder"></input>
+        </view>
+    </view>
+    <view class="btn" bindtap="add">
+        <x-button></x-button>
+    </view>
+</view>

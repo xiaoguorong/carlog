@@ -1,0 +1,82 @@
+.title{
+  margin-top:32rpx;
+  margin-left:28rpx;
+  font-size:28rpx;
+  color:rgba(53,53,53,1);
+  line-height:40rpx;
+  text-align:left;
+}
+.type{
+  padding:0 28rpx;
+  margin-top:28rpx;
+  overflow:hidden;
+}
+.type>view>view{
+  width:40rpx;
+  height:40rpx;
+  border-radius: 50%;
+  box-sizing:border-box;
+  border:2rpx solid rgba(218,218,218,1);
+  margin-right:16rpx;
+  margin-top:4rpx;
+  float:left;
+  position: relative;
+}
+.type>view>view>view{
+  width:28rpx;
+  height:28rpx;
+  margin:auto;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  border-radius: 50%;
+}
+.type>view>text{
+  font-size:32rpx;
+  color:rgba(53,53,53,1);
+  line-height:44rpx;
+  float:left;
+  margin-right:40rpx;
+}
+.type>view:nth-of-type(3) text{
+  margin-right:0
+}
+.content{
+  margin:28rpx;
+}
+textarea{
+  width:100%;
+  padding:28rpx 28rpx 32rpx 28rpx;
+  box-sizing:border-box;
+  height:420rpx;
+  background:rgba(246,247,248,1);
+  border-radius:12rpx;
+}
+.mobile{
+  padding-left:28rpx;
+  border-top:28rpx solid #F6F7F8;
+  border-bottom:28rpx solid #F6F7F8;
+  overflow:hidden;
+}
+.mobile text,.mobile input{
+  float:left;
+  font-size:32rpx;
+  color:rgba(53,53,53,1);
+  line-height:108rpx;
+  height:108rpx;
+}
+.mobile text{
+  margin-right:32rpx;
+}
+.btn{
+  margin-top:56rpx;
+}
+.notice{
+  margin-top:32rpx;
+  font-size:24rpx;
+  color:rgba(53,53,53,1);
+  line-height:34rpx;
+  text-align: center;
+}

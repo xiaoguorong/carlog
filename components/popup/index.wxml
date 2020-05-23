@@ -1,0 +1,6 @@
+<view class="box" catchtap="close">
+  <view class="popup" catchtap="noClick">
+    <slot></slot>
+  </view>
+</view>
+

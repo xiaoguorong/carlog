@@ -1,0 +1,92 @@
+.box{
+  padding-top:200rpx;
+}
+.box>image{
+  width:320rpx;
+  height:80rpx;
+  margin:auto;
+}
+.box>text:nth-of-type(1){
+  margin-top:28rpx;
+  font-size:36rpx;
+  font-weight:500;
+  color:rgba(53,53,53,1);
+  line-height:50rpx;
+  text-align:center;
+}
+.box>text:nth-of-type(2){
+  font-size:32rpx;
+  color:rgba(151,151,151,1);
+  line-height:44rpx;
+  margin-top:60rpx;
+  text-align:center;
+}
+.mobile{
+  margin-top:62rpx;
+  margin-right:78rpx;
+  margin-left:76rpx;
+  display:flex;
+  border-bottom:1px solid #F6F7F8;
+}
+.mobile text{
+  font-size:32rpx;
+  color:rgba(53,53,53,1);
+  margin-right:52rpx;
+  line-height:122rpx;
+}
+.mobile input{
+  flex:1;
+  min-height:122rpx;
+  height:112rpx;
+  border:none;
+  outline:none;
+  font-size:32rpx;
+  color:#353535;
+  line-height:122rpx;
+}
+.mobile image{
+  margin-left:28rpx;
+  width:28rpx;
+  margin-top:46rpx;
+  height:28rpx;
+}
+.password{
+  margin-top:0;
+}
+.password image{
+  width:36rpx;
+  margin-top:46rpx;
+  height:36rpx;
+}
+.agreement{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:60rpx;
+  margin:auto;
+}
+.agreement text{
+  font-size:24rpx;
+  color:rgba(206,206,206,1);
+  line-height:34rpx;
+  text-align: center;
+}
+.agreement view{
+  margin:auto;
+  display:flex;
+  justify-content: center;
+}
+.agreement view text{
+  color:#353535;
+}
+.btn{
+  margin:auto;
+  margin-top:60rpx;
+  width:600rpx;
+}
+.find{
+  margin-top:40rpx;
+  font-size:28rpx;
+  color:rgba(53,53,53,1);
+  line-height:40rpx;
+}

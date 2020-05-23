@@ -1,0 +1,28 @@
+<view class="box" style="padding-bottom:{{isIphoneX == 1 ? '68rpx' : '20rpx'}}">
+  <view class="tab" wx:for="{{list}}" wx:key="index" bindtap="switchTab" data-index="{{index}}">
+    <image  class="pic" src="{{select == index ? item.selectedIconPath : item.iconPath}}" wx:if="index == 0 || index == 1"/>
+    <text class="text" style="color:{{select == index ? '#353535' : '#777777'}}" wx:if="index == 0 || index == 1">{{item.text}}</text>
+  </view>
+  <view class="add" bindtap="showPopup">
+    <image src="./../image/add.png"></image>
+  </view>
+  <popup wx:if="{{popup}}" bind:myClose="closePopup">
+    <view class="type">
+      <view catchtap="">
+      <view catchtap="addGoods">
+          <image src="./../image/goods.png"></image>
+          <text>商品</text>
+        </view>
+        <view catchtap="addCus">
+          <image src="./../image/customer.png"></image>
+          <text>客户</text>
+        </view>
+        <view catchtap="addStock">
+          <image src="./../image/stock.png"></image>
+          <text>库存</text>
+        </view>
+      </view>
+      <image src="./../image/close.png" catchtap="closePopup"></image>
+    </view>
+  </popup>
+</view>

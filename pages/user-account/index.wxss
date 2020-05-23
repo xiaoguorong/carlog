@@ -1,0 +1,61 @@
+.box{
+  width:100vw;
+  height:100vh;
+  background:#F6F7F8;
+}
+.change-mobile{
+  padding:32rpx 0 32rpx 28rpx;
+  background:#fff;
+  overflow:hidden;
+}
+.change-mobile image,
+.change-password image{
+  width:44rpx;
+  height:44rpx;
+  float:right;
+  margin-top:26rpx;
+  margin-left:12rpx;
+  margin-right:14rpx;
+}
+.change-password image{
+  margin-top:32rpx;
+}
+.mobile{
+  float:left;
+}
+.mobile text{
+  font-size:32rpx;
+  text-align:left;
+  color:rgba(53,53,53,1);
+  line-height:44rpx;
+}
+.mobile text:nth-of-type(2){
+  margin-top:8rpx
+}
+.change-mobile>text{
+  margin-top:28rpx;
+  font-size:28rpx;
+  color:rgba(53,53,53,1);
+  line-height:40rpx;
+  float:right;
+}
+.change-password{
+  margin-top:1px;
+  padding-left:28rpx;
+  background:#fff;
+  overflow:hidden;
+}
+.change-password text{
+  font-size:32rpx;
+  color:rgba(53,53,53,1);
+  line-height:108rpx;
+  float:left;
+}
+.logout{
+  margin-top:28rpx;
+  background:#fff;
+  font-size:32rpx;
+  color:rgba(80,125,240,1);
+  line-height:108rpx;
+  text-align:center;
+}

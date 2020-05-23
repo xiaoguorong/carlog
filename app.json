@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/personal-center/index",
+    "pages/stock/index",
+    "pages/goods/index",
+    "pages/customer/index",
+    "pages/login/index",
+    "pages/help/index",
+    "pages/teaching-material/index",
+    "pages/agreement2/index",
+    "pages/agreement1/index",
+    "pages/change-login/index",
+    "pages/index/index",
+    "pages/change-campus/index",
+    "pages/teaching-material-detail/index",
+    "pages/article/index",
+    "pages/user-info/index",
+    "pages/user-account/index",
+    "pages/user-notice/index",
+    "pages/about/index",
+    "pages/feedback/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTextStyle": "black",
+    "navigationStyle":"custom"
+  },
+  "usingComponents":{
+    "x-header":"components/x-header/index",
+    "x-button":"components/x-button/index",
+    "popup":"components/popup/index"
+  },
+  "tabBar": {
+    "custom": true,
+    "list":[
+      {
+      "iconPath":"/image/data_unselect.png",
+      "selectedIconPath":"/image/data_select.png",
+      "text":"首页",
+      "pagePath":"pages/index/index"
+    },
+    {
+      "iconPath":"/image/people_unselect.png",
+      "selectedIconPath":"/image/people_select.png",
+      "text":"我的",
+      "pagePath":"pages/personal-center/index"
+    }
+  ]
+  },
+  "debug": false,
+  "sitemapLocation": "sitemap.json"
+}

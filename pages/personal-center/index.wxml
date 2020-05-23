@@ -1,0 +1,39 @@
+<view>
+  <x-header title="{{title}}" isBack="{{!isLogin}}" isIcon="{{isLogin}}"></x-header>
+
+  <view class="info" style="margin-top:{{statusBarHeight*2+88+'rpx'}}">
+    <view class="avatar">
+      <image src="./../../image/head_default.png" wx:if="{{!isLogin}}"/>
+      <open-data type="userAvatarUrl" wx:if="{{isLogin}}"></open-data>
+    </view>
+    <view class="detail" wx:if="{{isLogin}}">
+      <view class="name">
+        <open-data type="userNickName"></open-data>
+      </view>
+      <view class="edit">
+        <text>东厂-全球最大的厂</text>
+      </view>
+    </view>
+    <view class="no-login" wx:if="{{!isLogin}}">
+      <view>您好，</view>
+      <view>请先登录账号！</view>
+    </view> 
+    <button wx:if="{{!isLogin}}" class="btn-wx" plain="true" open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">获取用户手机号</button>
+  </view>
+  <view class="data">
+    <view>
+      <text>{{count.customerCount}}</text>
+      <text>客户</text>
+    </view>
+    <view>
+      <text>{{count.goodsCount}}</text>
+      <text>商品种类</text>
+    </view>
+    <view>
+      <text>{{count.goodsAllCount}}</text>
+      <text>商品总数</text>
+    </view>
+  </view>
+  <view>客户列表</view>
+  <view>商品列表</view>
+</view>

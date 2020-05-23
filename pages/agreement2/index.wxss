@@ -1,0 +1,26 @@
+.agreement{
+  padding:140rpx 28rpx 28rpx 28rpx;
+  font-size:28rpx;
+}
+.title{
+  font-size:32rpx;
+  text-align: center;
+  line-height: 38rpx;
+  font-weight: 700;
+  margin-bottom:28rpx;
+  word-break: normal;
+}
+.content{
+  text-align: justify;
+}
+.subtitle{
+  line-height: 38rpx;
+  margin-top:28rpx;
+  margin-bottom:20rpx;
+  font-weight: 600;
+  text-align: justify;
+}
+.endtitle{
+  text-align: right;
+  margin-top:28rpx;
+}

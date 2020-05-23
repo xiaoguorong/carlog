@@ -1,0 +1,64 @@
+<view class="box">
+    <x-header title="{{title}}"></x-header>
+    <view class="info" style="padding-top:{{statusBarHeight*2+88+'rpx'}}">
+        <view class="num mobile">
+            <text>物品名称</text>
+            <text bindtap="openPopup">{{name}}</text>
+        </view>
+        <view class="num mobile">
+            <text>进出数量</text>
+            <input placeholder="请输入进出数量(正负数)"  value="{{count}}" data-name="count" bindinput="inputBind" placeholder-class="placeholder"></input>
+        </view>
+        <view class="num mobile" wx:if="{{count > 0}}">
+            <text>进货价格 </text>
+            <input placeholder="请输入本次进货价格（总价）"  value="{{price}}" data-name="price" bindinput="inputBind" placeholder-class="placeholder"></input>
+        </view>
+        <view class="num mobile">
+            <text>进出日期</text>
+            <text bindtap="openDate">{{date}}</text>
+        </view>
+        <view class="mobile">
+            <text>备注</text>
+            <textarea bindblur="bindTextAreaBlur" placeholder="备注内容" model:value="{{content}}"/>
+        </view>
+    </view>
+    <view class="btn" bindtap="add">
+        <x-button></x-button>
+    </view>
+    <popup wx:if="{{showPopup}}" bind:myClose="closePopup">
+        <view>
+            <view class="picker_btn">
+                <text catchtap="closePopup">取消</text>
+                <text catchtap="changeName1">确定</text>
+            </view>
+            <view class="picker">
+                <picker-view bindchange="bindChange1" class="detail">
+                    <picker-view-column>
+                        <view wx:for="{{list}}" style="line-height: 50px" data-name="{{item}}">{{item.name}}</view>
+                    </picker-view-column>
+                </picker-view>
+            </view>
+        </view>
+    </popup>
+    <popup wx:if="{{showDate}}" bind:myClose="closedate">
+        <view>
+            <view class="picker_btn">
+                <text catchtap="closedate">取消</text>
+                <text catchtap="changeDate">确定</text>
+            </view>
+            <view class="picker">
+                <picker-view bindchange="bindChange" class="detail">
+                    <picker-view-column>
+                        <view wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
+                    </picker-view-column>
+                    <picker-view-column>
+                        <view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
+                    </picker-view-column>
+                    <picker-view-column>
+                        <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
+                    </picker-view-column>
+                </picker-view>
+            </view>
+        </view>
+    </popup>
+</view>

@@ -1,0 +1,31 @@
+.list>view{
+  padding:32rpx 40rpx 32rpx 40rpx;
+  overflow: hidden;
+}
+.list>view image{
+  width:48rpx;
+  height:48rpx;
+  margin-top:22rpx;
+  float:left;
+  margin-right:40rpx;
+}
+.text{
+  float:left;
+}
+.text view:nth-of-type(1){
+  font-size:32rpx;
+  font-weight:500;
+  color:rgba(53,53,53,1);
+  line-height:44rpx;
+}
+.text view:nth-of-type(2){
+  font-size:24rpx;
+  color:rgba(53,53,53,1);
+  line-height:24rpx;
+}
+.text view:nth-of-type(3){
+  margin-top:8rpx;
+  font-size:24rpx;
+  color:rgba(169,169,169,1);
+  line-height:34rpx;
+}

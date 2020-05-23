@@ -1,0 +1,25 @@
+<x-header title="{{title}}"></x-header>
+<view class="box">
+  <image src="./../../image/logo.png"/>
+  <text>校区管理系统</text>
+  <view class="mobile">
+    <text>账号</text>
+    <input placeholder="请输入手机号" class="phone" type="number" maxlength="11" value="{{phone}}" data-name="phone" bindinput="inputBind" placeholder-class="placeholder"/>
+    <image wx:if="{{phone.length > 0}}" src="./../../image/personal-close.png" bindtap="clear"/>
+  </view>
+  <view class="mobile password">
+    <text>密码</text>
+    <input value="{{password}}" data-name="password" bindinput="inputBind" password="{{isPassword}}" placeholder="请输入密码" placeholder-class="placeholder"/>
+      <image src="{{isPassword ? './../../image/view-key.png' : './../../image/hidden-key.png'}}" bindtap="changeType"/>
+  </view>
+  <view class="btn" bindtap="login">
+    <x-button type="{{phone.length > 0 || password.length > 0 ? 'blue' : 'grey'}}" title="登录"></x-button>
+  </view>
+  <text class="find" bindtap="findPassword">忘记密码</text>
+  <view class="agreement">
+      <text>登录即代表您已阅读并同意</text>
+      <view>
+        <text bindtap="goAgree1">服务协议</text><text>｜</text><text bindtap="goAgree2">隐私政策</text>
+      </view>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+<view class="box">
+   <x-header title="{{title}}"></x-header>
+
+   <view style="padding-top:{{statusBarHeight*2+88+'rpx'}}">
+      <view class="change-mobile" bindtap="changeMobile">
+         <view class="mobile">
+            <text>手机号码</text>
+            <text>{{mobile}}</text>
+         </view>
+         <image src="./../../image/personal-right.png"/>
+         <text>更换</text>
+      </view>
+       <view class="change-password" bindtap="changePassword">
+         <text>修改密码</text>
+         <image src="./../../image/personal-right.png"/>
+      </view>
+   </view>
+
+   <view class="logout" bindtap="logout">
+      退出账号
+   </view>
+</view>

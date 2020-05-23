@@ -1,0 +1,31 @@
+<view class="box">
+   <x-header></x-header>
+
+   <view wx:if="{{stage == 0}}" style="padding-top:{{statusBarHeight*2+88+'rpx'}}">
+      <text class="title">安全验证</text>
+      <text class="warn">为了确保账户安全，修改手机号码前，需要进行身份验证</text>
+      <view class="password">
+         <input value="{{password}}" data-name="password" bindinput="inputBind" password="{{isPassword}}" placeholder="输入密码" placeholder-class="placeholder"/>
+         <image src="{{isPassword ? './../../image/view-key.png' : './../../image/hidden-key.png'}}" bindtap="changeType"/>
+      </view>
+      <view class="btn" bindtap="nextStep">
+         <x-button type="{{password.length > 0 ? 'blue' : 'grey'}}" title="下一步，填写新手机号"></x-button>
+      </view>
+   </view>
+   <view wx:if="{{stage == 1}}" style="padding-top:{{statusBarHeight*2+88+'rpx'}}">
+      <text class="title">填写新手机号</text>
+      <text class="warn">提示：此处修改后，电脑端账号也会同步修改</text>
+      <view class="password mobile">
+         <input value="{{mobile}}" data-name="mobile" bindinput="inputBind" placeholder="输入新手机号" placeholder-class="placeholder"/>
+         <image src="./../../image/personal-close.png" bindtap="clearMobile"/>
+      </view>
+      <view class="code">
+         <text>验证码</text>
+         <input value="{{code}}" data-name="code" bindinput="inputBind" placeholder="输入验证码" placeholder-class="placeholder"/>
+         <text bindtap="getCode">{{countDown}}</text>
+      </view>
+      <view class="btn" bindtap="save">
+         <x-button></x-button>
+      </view>
+   </view>
+</view>

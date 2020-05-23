@@ -1,0 +1,24 @@
+<view class="box">
+   <x-header title="{{title}}"></x-header>
+
+   <view style="padding-top:{{statusBarHeight*2+88+'rpx'}}">
+      <view class="change-avatar" bindtap="choosePic">
+         <text>更换头像</text>
+         <image src="./../../image/personal-right.png"/>
+         <image src="{{userInfo.avatar}}"/>
+      </view>
+       <view class="change-avatar name">
+         <text>用户名</text>
+         <text>{{userInfo.nickname}}</text>
+      </view>
+       <view class="change-avatar campus">
+         <text>当前校区</text>
+         <text>{{campus.campus_name}}</text>
+      </view>
+       <view class="change-avatar auth-name">
+         <text>校区角色</text>
+         <text>{{campus.role_name}}</text>
+      </view>
+   </view>
+   <image-cropper wx:if="{{src}}" id="image-cropper" limit_move="{{true}}" disable_rotate="{{true}}" width="{{width}}" height="{{height}}" imgSrc="{{src}}" bindload="cropperload" bindimageload="loadimage" bindtapcut="clickcut" bind:onSubmit="submit" bind:onClear="clear"></image-cropper>
+</view>

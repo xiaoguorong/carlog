@@ -1,0 +1,30 @@
+<view class="box">
+   <x-header title="{{title}}"></x-header>
+
+   <text class="title" style="padding-top:{{statusBarHeight*2+88+'rpx'}}">选择反馈类型</text>
+
+   <view class="type">
+      <view bindtap="changeSelect" data-select="1">
+         <view style="border-color:{{select == 1 ? '#D3E3FF' : '#DADADA'}}">
+            <view style="background:{{select == 1 ? '#507DF0' : 'none'}}"></view>
+         </view>
+         <text>应用功能bug</text>
+      </view>
+      <view bindtap="changeSelect" data-select="2">
+         <view style="border-color:{{select == 2 ? '#D3E3FF' : '#DADADA'}}">
+            <view style="background:{{select == 2 ? '#507DF0' : 'none'}}"></view>
+         </view>
+         <text>产品需求</text>
+      </view>
+      <view bindtap="changeSelect" data-select="3">
+         <view style="border-color:{{select == 3 ? '#D3E3FF' : '#DADADA'}}">
+            <view style="background:{{select == 3 ? '#507DF0' : 'none'}}"></view>
+         </view>
+         <text>其他</text>
+      </view>
+   </view>
+   <view class="content"><textarea placeholder="请输入您反馈的依据（字数500以内）" model:value="{{content}}"/></view>
+   <view class="mobile"><text>联系方式</text><input value="{{mobile}}" data-name="mobile" bindinput="inputBind"/></view>
+   <view class="btn" bindtap="feedback"><x-button title="{{btnTitlt}}" type="{{content.length > 0 ? 'blue' : 'grey'}}"></x-button></view>
+   <view class="notice">本栏目只受理校区管理系统方面的意见及反馈</view>
+</view>

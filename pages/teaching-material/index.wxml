@@ -1,0 +1,37 @@
+<wxs src="./index.wxs" module="util"/>
+<x-header isIcon="false" title="{{title}}"></x-header>
+<view class="box" wx:if="{{isLogin && hasBookAuth && hasCoursewareAuth}}">
+  <view class="tab" style="top:{{statusBarHeight*2+86+'rpx'}}" wx:if="{{hasBookAuth && hasCoursewareAuth}}">
+    <text class="{{select == 0 ? 'select' : ''}}" bindtap="change0">教师用书</text>
+    <text class="{{select == 1 ? 'select' : ''}}" bindtap="change1">教材课件</text>
+  </view>
+  <view class="list" style="padding-top:{{statusBarHeight*2+88+106+'rpx'}}" wx:if="{{select == 0 && hasBookAuth}}">
+    <view bindtap="goDetail" wx:for="{{bookData}}" wx:key="index" data-id="{{item.id}}" data-name="{{item.name}}">
+      <image src="{{item.cover}}"/>
+      <view class="text">
+        <view>{{item.name}}</view>
+        <view>{{item.count}}份学习资料  {{util.formatTime(item.update_time)}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="list" style="padding-top:{{statusBarHeight*2+88+106+'rpx'}}" wx:if="{{select == 1 && hasCoursewareAuth}}">
+    <view bindtap="goDetail" data-id="{{item.id}}" data-name="{{item.name}}" wx:for="{{coursewareData}}" wx:key="index">
+      <image src="{{item.cover}}"/>
+      <view class="text">
+        <view>{{item.name}}</view>
+        <view>{{item.count}}份学习资料  {{util.formatTime(item.update_time)}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{!hasBookAuth && !hasCoursewareAuth && isLogin}}" class="no-login-box">
+  <image src="./../../image/img-bg.png"/>
+  <text>您暂无权限查看教材</text>
+  <text style="margin-top:0">请联系校长开通!</text>
+</view>
+<view wx:if="{{!isLogin}}" class="no-login-box">
+  <image src="./../../image/img-bg.png"/>
+  <text>您的教材在向你飞奔而来</text>
+  <text style="margin-top:0">请先登录账号!</text>
+  <view class="btn" bindtap="login"><x-button title="登陆账号，查看教材"></x-button></view>
+</view>

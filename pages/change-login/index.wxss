@@ -1,0 +1,76 @@
+.box{
+  padding-top:330rpx;
+}
+.box>image{
+  width:320rpx;
+  height:80rpx;
+  margin:auto;
+}
+.box>text:nth-of-type(1){
+  margin-top:28rpx;
+  font-size:36rpx;
+  font-weight:500;
+  color:rgba(53,53,53,1);
+  line-height:50rpx;
+  text-align:center;
+}
+.box>text:nth-of-type(2){
+  font-size:32rpx;
+  color:rgba(151,151,151,1);
+  line-height:44rpx;
+  margin-top:60rpx;
+  text-align:center;
+}
+.button-box{
+  height:88rpx;
+  width:600rpx;
+  position:relative;
+  margin:auto;
+  border-radius:12rpx;
+  color:#fff;
+  background:#6B92F2;
+  margin-top:168rpx;
+}
+.button-box image{
+  width:56rpx;
+  height:56rpx;
+  margin-top:16rpx;
+  margin-left:124rpx;
+  float:left;
+}
+.button-box text{
+  margin-left:40rpx;
+  font-size:32rpx;
+  color:rgba(255,255,255,1);
+  line-height:88rpx;
+  float:left;
+}
+.agreement{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:60rpx;
+  margin:auto;
+}
+.agreement text{
+  font-size:24rpx;
+  color:rgba(206,206,206,1);
+  line-height:34rpx;
+  text-align: center;
+}
+.agreement view{
+  margin:auto;
+  display:flex;
+  justify-content: center;
+}
+.agreement view text{
+  color:#353535;
+}
+.btn-wx{
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  opacity: 0;
+}

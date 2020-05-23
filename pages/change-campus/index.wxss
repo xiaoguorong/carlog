@@ -1,0 +1,22 @@
+.list image{
+  float:left;
+  width:44rpx;
+  height:44rpx;
+  margin-top:36rpx;
+  margin-left:28rpx;
+}
+.list text{
+  font-size:32rpx;
+  color:rgba(53,53,53,1);
+  line-height:108rpx;
+  margin-left:112rpx;
+}
+.box{
+  width:100vw;
+  height:100vh;
+  background:rgba(246,247,248,1);
+}
+.list{
+  margin-bottom:1px;
+  background: #fff;
+}

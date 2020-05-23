@@ -1,0 +1,5 @@
+<view>
+   <web-view wx:if="{{index == 1}}" src="https://mp.weixin.qq.com/s/avZ576UuxiL-_me9m7qgog"></web-view>
+   <web-view wx:if="{{index == 2}}" src="https://mp.weixin.qq.com/s/2rYxp9L3ac-3nqwULgcpiA"></web-view>
+   <web-view wx:if="{{index == 3}}" src="https://mp.weixin.qq.com/s/Q-s2zMzA6zWp2aO6svC0-Q"></web-view>
+</view>

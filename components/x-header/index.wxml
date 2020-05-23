@@ -1,0 +1,7 @@
+<view class="header" style="padding-top:{{statusBarHeight*2+'rpx'}}">
+  <image class="back" src="./../../image/nav-back.png" wx:if="{{isBack == 'true' && isIcon == 'true'}}" bindtap="back"></image>
+  <image class="back setting" src="./../../image/nav-setting.png" wx:if="{{isBack == 'false' && isIcon == 'true'}}" bindtap="goSetting"></image>
+  <slot></slot>
+  <view class="title">{{title}}</view>
+</view>
+

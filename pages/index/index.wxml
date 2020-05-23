@@ -1,0 +1,73 @@
+<x-header isIcon="false" title="{{title}}" class="index-header">
+   <!-- <image src="{{userInfo.avatar}}" wx:if="{{isLogin}}" style="top:{{statusBarHeight*2+12+'rpx'}}"/>
+   <image src="./../../image/home-headimg.png" wx:else style="top:{{statusBarHeight*2+12+'rpx'}}"/> -->
+</x-header>
+<view style="padding-top:{{statusBarHeight*2+88+28+'rpx'}}" class="banner">
+   <swiper indicator-dots="true" indicator-color="rgba(0,0,0,.15)" indicator-active-color="#507DF0">
+      <block>
+         <swiper-item>
+            <view>
+               <image src="./../../image/banner1.png"/>
+            </view>
+         </swiper-item>
+      </block>
+      <block>
+         <swiper-item>
+            <view>
+               <image src="./../../image/banner2.png"/>
+            </view>
+         </swiper-item>
+      </block>
+      <block>
+         <swiper-item>
+            <view>
+               <image src="./../../image/banner3.png"/>
+            </view>
+         </swiper-item>
+      </block>
+   </swiper>
+   <!-- <button class="btn" bindtap="goLogin">手机号登录</button>
+   <button class="btn btn-wx" type="default" open-type="getUserInfo" bindgetuserinfo="getuserinfo">微信一键登录</button> -->
+</view>
+<view class="content" style="padding-bottom:{{isIphoneX ? '134rpx' : '66rpx'}}">
+   <text class="text">干货合集</text>
+   <view bindtap="goDetail" data-index="1">
+      <image src="./../../image/article1.jpg"/>
+      <text>这样夸赞孩子 具体且有效</text>
+      <text>蛙蛙 · 2020-04-20发布</text>
+      <view>
+         <image src="./../../image/home-see.png"/>
+         <text>786</text>
+      </view>
+      <view>
+         <image src="./../../image/home-like.png"/>
+         <text>10</text>
+      </view>
+   </view>
+   <view bindtap="goDetail" data-index="2">
+      <image src="./../../image/article2.jpg"/>
+      <text>关于学习 | 实用高效的学习时间管理法则</text>
+      <text>蛙蛙 · 2020-04-10发布</text>
+      <view>
+         <image src="./../../image/home-see.png"/>
+         <text>206</text>
+      </view>
+      <view>
+         <image src="./../../image/home-like.png"/>
+         <text>17</text>
+      </view>
+   </view>
+   <view bindtap="goDetail" data-index="3">
+      <image src="./../../image/article3.jpg"/>
+      <text>孩子以作业为借口要玩手机？教育部：不可能了！</text>
+      <text>蛙蛙 · 2020-03-20发布</text>
+      <view>
+         <image src="./../../image/home-see.png"/>
+         <text>358</text>
+      </view>
+      <view>
+         <image src="./../../image/home-like.png"/>
+         <text>55</text>
+      </view>
+   </view>
+</view>

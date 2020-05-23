@@ -1,0 +1,13 @@
+<view>
+  <x-header title="{{title}}"></x-header>
+  <view class="list" style="padding-top:{{statusBarHeight*2+88+'rpx'}}">
+    <view bindtap="goDetail" wx:for="{{list}}" data-url="{{item.qnkey}}">
+      <image src="./../../image/class-pdf.png"/>
+      <view class="text">
+        <view>{{item.class_name}}</view>
+        <view>{{item.classify_name}}</view>
+        <view>{{item.random_total}}次浏览 · {{item.random}}人正在学</view>
+      </view>
+    </view>
+  </view>
+</view>

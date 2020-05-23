@@ -1,0 +1,75 @@
+<view class="box">
+    <x-header title="{{title}}"></x-header>
+    <view class="info" style="padding-top:{{statusBarHeight*2+88+'rpx'}}">
+        <view class="num">
+            <text>号牌号码</text>
+            <view class="province" bindtap="openProvince">
+                <text>{{province}}</text>
+                <image src="./../../image/arrow_b.png"></image>
+            </view>
+            <input placeholder="请输入号牌号码"  value="{{code}}" data-name="code" bindinput="inputBind" placeholder-class="placeholder"></input>
+        </view>
+        <view class="num mobile">
+            <text>手机号码</text>
+            <input placeholder="请输入手机号"  value="{{mobile}}" data-name="mobile" bindinput="inputBind" placeholder-class="placeholder"></input>
+        </view>
+        <view class="num mobile">
+            <text>维修类型</text>
+            <checkbox-group bindchange="checkboxChange">
+                <label class="checkbox">
+                    <checkbox value="0" checked="true" color="#1BB399"/>保养
+                </label>
+                <label class="checkbox">
+                    <checkbox value="1" color="#1BB399"/>其他
+                </label>
+            </checkbox-group>
+        </view>
+        <view class="num mobile">
+            <text>维修收费</text>
+            <input placeholder="请输入本次维修实收价格"  value="{{price}}" data-name="price" bindinput="inputBind" placeholder-class="placeholder"></input>
+        </view>
+        <view class="num mobile">
+            <text>维修日期</text>
+            <text bindtap="openDate">{{date}}</text>
+        </view>
+        <view class="mobile">
+            <text>备注</text>
+            <textarea bindblur="bindTextAreaBlur" placeholder="备注内容（例：车辆自身问题，修车所用材料及收费价格，修车所用时间）" model:value="{{content}}"/>
+        </view>
+        <view class="add_file">
+            <view wx:for="{{imgList}}" style="background-image:url('{{item}}')">
+                <image src="./../../image/del_img.png" catchtap="delImg" data-index="{{index}}"></image>
+            </view>
+            <view style="background-image:url('./../../image/add_file.png')" bindtap="addImg"></view>
+        </view>
+    </view>
+    <view class="btn" bindtap="add">
+        <x-button></x-button>
+    </view>
+    <popup wx:if="{{showProvince}}" bind:myClose="closeProvince">
+      <view class="allProvince">
+        <text wx:for="{{allProvince}}" style="background:{{item == province ? '#1BB399' : '#fff'}};color:{{item == province ? '#fff' : 'rgba(77,87,100,1)'}}" bindtap="changeProvince" data-pro="{{item}}">{{item}}</text>
+      </view>
+    </popup>
+    <popup wx:if="{{showDate}}" bind:myClose="closedate">
+        <view>
+            <view class="picker_btn">
+                <text catchtap="closedate">取消</text>
+                <text catchtap="changeDate">确定</text>
+            </view>
+            <view class="picker">
+                <picker-view bindchange="bindChange" class="detail">
+                    <picker-view-column>
+                        <view wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
+                    </picker-view-column>
+                    <picker-view-column>
+                        <view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
+                    </picker-view-column>
+                    <picker-view-column>
+                        <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
+                    </picker-view-column>
+                </picker-view>
+            </view>
+        </view>
+    </popup>
+</view>

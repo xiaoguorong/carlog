@@ -1,0 +1,11 @@
+<view class="box">
+   <x-header title="{{title}}"></x-header>
+
+   <view class="logo" style="padding-top:{{statusBarHeight*2+88+'rpx'}}"><image src="./../../image/logo.png"/></view>
+
+   <text class="des">口才宝是亿人星教育集团旗下著名品牌，是长三角最专业的语商提升机构，拥有国内领先权威专业的高级语商和口才研究院，其对于中国人语言学习习惯改良、口语表达能力提升、卓越语商锻造等课题有深入研究，在理论研究和培训实践中不懈努力、积极探索、大胆尝试，注重理论与实践相结合，总结出一系列实用高效最适合中国人特点的语商提升和口才训练方法，形成科学而又完整的语商和口才体系。</text>
+
+   <view class="website">企业官网<text>http://www.kcb.cn</text></view>
+
+   <view class="website" bindtap="call">交流合作<text>18915517987</text></view>
+</view>

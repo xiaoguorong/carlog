@@ -1,0 +1,3 @@
+<view class="box">
+   <x-header title="{{title}}"></x-header>
+</view>

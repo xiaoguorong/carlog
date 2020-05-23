@@ -1,0 +1,17 @@
+.button-box{
+  height:88rpx;
+  width:600rpx;
+  margin:auto;
+  line-height:88rpx;
+  border-radius:12rpx;
+  font-size:32rpx;
+  text-align:center;
+}
+.blue{
+  color:#fff;
+  background:#1BB399
+}
+.grey{
+  background:#F6F7F8;
+  color:#979797;
+}

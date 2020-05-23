@@ -1,0 +1,9 @@
+<view class="box">
+  <x-header title="{{title}}"></x-header>
+  <view style="padding-top:{{statusBarHeight*2+88+'rpx'}}">
+  <view wx:for="{{campusInfo}}" wx:key="index" class="list" bindtap="changeCampus" data-index="{{index}}">
+      <image src="./../../image/select.png" wx:if="{{select == index}}"/>
+      <text style="color:{{select == index ? '#507DF0' : '#353535'}}">{{item.campus_name}}</text>
+   </view>
+  </view>
+</view>
