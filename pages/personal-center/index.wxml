@@ -34,6 +34,14 @@
       <text>商品总数</text>
     </view>
   </view>
-  <view>客户列表</view>
-  <view>商品列表</view>
+  <view class="module">
+    <view bindtap="customerList">
+      <image src="./../../image/customer.png"></image>
+      <text>客户列表</text>
+    </view>
+    <view bindtap="goodsList">
+      <image src="./../../image/goods.png"></image>
+      <text>商品列表</text>
+    </view>
+  </view>
 </view>

@@ -9,8 +9,7 @@ Page({
   },
   onShow(){
     const data = {
-      // id: getCurrentPages()[getCurrentPages().length - 1].router.options.id
-      id:1
+      id: getCurrentPages()[getCurrentPages().length - 1].options.id
     }
     http.requestSync("/customer/detail", 'GET', data).then((res) => {
       if(res.code == 200){

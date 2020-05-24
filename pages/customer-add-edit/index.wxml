@@ -40,12 +40,12 @@
             <text>备注</text>
             <textarea bindblur="bindTextAreaBlur" placeholder="备注内容（例：车辆自身问题，修车所用材料及收费价格，修车所用时间）" model:value="{{content}}"/>
         </view>
-        <view class="add_file">
+        <!-- <view class="add_file">
             <view wx:for="{{imgList}}" style="background-image:url('{{item}}')">
                 <image src="./../../image/del_img.png" catchtap="delImg" data-index="{{index}}"></image>
             </view>
             <view style="background-image:url('./../../image/add_file.png')" bindtap="addImg"></view>
-        </view>
+        </view> -->
     </view>
     <view class="btn" bindtap="add">
         <x-button></x-button>

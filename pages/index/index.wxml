@@ -1,35 +1,28 @@
 <x-header isIcon="false" title="{{title}}">
 </x-header>
-<view style="padding-top:{{statusBarHeight*2+88+28+'rpx'}}" class="banner">
-   <swiper indicator-dots="true" indicator-color="rgba(0,0,0,.15)" indicator-active-color="#507DF0">
-      <block>
-         <swiper-item>
-            <view>
-               <image src="./../../image/banner1.png"/>
-            </view>
-         </swiper-item>
-      </block>
-      <block>
-         <swiper-item>
-            <view>
-               <image src="./../../image/banner2.png"/>
-            </view>
-         </swiper-item>
-      </block>
-      <block>
-         <swiper-item>
-            <view>
-               <image src="./../../image/banner3.png"/>
-            </view>
-         </swiper-item>
-      </block>
-   </swiper>
-   <!-- <button class="btn" bindtap="goLogin">手机号登录</button>
-   <button class="btn btn-wx" type="default" open-type="getUserInfo" bindgetuserinfo="getuserinfo">微信一键登录</button> -->
-</view>
-<view class="new-data">
-销售业绩
-<view bindtap="getData" data-index="0">今天{{count.customerCount}}</view>
-<view bindtap="getData" data-index="1">本周{{count.goodsAddCount}}</view>
-<view bindtap="getData" data-index="2">本月{{count.goodsRemoveCount}}</view>
+<view style="padding-top:{{statusBarHeight*2+88+28+'rpx'}}" class="box">
+  <view class="new-data">
+    <view class="tab">
+      <text>销售业绩</text>
+      <view>
+        <text bindtap="getData" data-index="0" style="background:{{tab == 0 ? 'rgba(27,17,15)' : '#fff'}};color:{{tab == 0 ? '#1BB399' : '#333'}}">当天</text>
+        <text bindtap="getData" data-index="1" style="background:{{tab == 1 ? 'rgba(27,17,15)' : '#fff'}};color:{{tab == 1 ? '#1BB399' : '#333'}}">本周</text>
+        <text bindtap="getData" data-index="2" style="background:{{tab == 2 ? 'rgba(27,17,15)' : '#fff'}};color:{{tab == 2 ? '#1BB399' : '#333'}}">本月</text>
+      </view>
+    </view>
+    <view class="data">
+      <view>
+        <text>{{count.customerCount}}</text>
+        <text>顾客</text>
+      </view>
+      <view>
+        <text>{{count.goodsAddCount}}</text>
+        <text>进货</text>
+      </view>
+      <view>
+        <text>{{count.goodsRemoveCount}}</text>
+        <text>出货</text>
+      </view>
+    </view>
+  </view>
 </view>

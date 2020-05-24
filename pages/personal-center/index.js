@@ -60,4 +60,14 @@ Page({
       }
     })
   },
+  customerList(){
+    wx.navigateTo({
+      url: '/pages/customer-list/index',
+    })
+  },
+  goodsList(){
+    wx.navigateTo({
+      url: '/pages/goods-list/index',
+    })
+  }
 })

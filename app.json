@@ -1,12 +1,12 @@
 {
   "pages": [
     "pages/customer-list/index",
-    "pages/customer-detail/index",
     "pages/index/index",
     "pages/personal-center/index",
+    "pages/customer-detail/index",
     "pages/stock/index",
     "pages/goods/index",
-    "pages/customer-add/index",
+    "pages/customer-add-edit/index",
     "pages/login/index",
     "pages/help/index",
     "pages/teaching-material/index",

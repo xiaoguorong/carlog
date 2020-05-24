@@ -6,11 +6,14 @@
   </view>
   <view>
     <view wx:for="{{list}}" class="list">
-      <view bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+      <view bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" data-index="{{index}}">
         <view>{{item.province+item.code+'   '+item.car_type}}</view>
         <view>{{item.mobile}}</view>
         <view>{{item.date}}</view>
-        <view class="del" style="right:{{right+'rpx'}}"></view>
+        <view class="del" style="right:{{touchIndex == index ? right+'rpx' : '-200rpx'}}">
+          <text catchtap="edit">编辑</text>
+          <text catchtap="del">删除</text>
+        </view>
       </view>
     </view>
   </view>

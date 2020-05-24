@@ -63,10 +63,12 @@
   opacity: 0;
 }
 .data{
-  border-top:1px solid #F6F7F8;
+  margin:20rpx 40rpx;
+  padding:30rpx 0;
+  border:1px solid #1BB399;
+  border-radius: 18rpx;
   display:flex;
-  padding:0 30rpx;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 .data view text{
   text-align:center;
@@ -76,4 +78,20 @@
 }
 .data view text:nth-of-type(1){
   font-size:26rpx;
+}
+.module view{
+  overflow: hidden;
+  margin:0 40rpx;
+  padding:30rpx 0;
+  border-bottom:1px solid #F6F7F8;
+}
+.module image{
+  height:50rpx;
+  width:50rpx;
+  float:left;
+  margin-right:30rpx;
+}
+.module text{
+  float:left;
+  line-height:50rpx;
 }

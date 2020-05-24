@@ -7,6 +7,7 @@ Page({
   data: {
     title:'首页',
     isLogin:false,
+    tab:0,
     count: {
       customerCount: 0,
       goodsAddCount: 0,
@@ -38,6 +39,9 @@ Page({
   },
   getData(e){
     var index = e.currentTarget.dataset.index;
+    this.setData({
+      tab:index
+    })
     console.log(index)
     if(index == 0){
       var data = {

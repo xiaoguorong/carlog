@@ -42,16 +42,19 @@ Component({
       })
     },
     addCus(){
+      this.closePopup();
       wx.navigateTo({
-        url: '/pages/customer/index',
+        url: '/pages/customer-add-edit/index',
       })
     },
     addStock(){
+      this.closePopup();
       wx.navigateTo({
         url: '/pages/stock/index',
       })
     },
     addGoods(){
+      this.closePopup();
       wx.navigateTo({
         url: '/pages/goods/index',
       })

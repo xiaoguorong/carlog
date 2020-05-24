@@ -1,12 +1,33 @@
 .list>view{
-  background:green;
   position:relative;
+  border-bottom:1px solid #F6F7F8;
+  margin:30rpx;
+}
+.list view view{
+  margin-left:30rpx;
+  line-height:60rpx;
 }
 .del{
   width:200rpx;
   height:100%;
   position:absolute;
-  right:-200rpx;
+  right:-230rpx;
   top:0;
   background: red;
+}
+.search-box{
+  display:flex;
+}
+.search-box input{
+  border:1px solid #F6F7F8;
+  border-radius: 10rpx;
+  padding-left:30rpx;
+  margin:0 30rpx;
+  height:60rpx;
+  line-height:60rpx;
+  flex:1;
+}
+.search-box text{
+  line-height:60rpx;
+  width:100rpx;
 }

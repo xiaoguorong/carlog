@@ -36,7 +36,8 @@ Page({
     price:'',
     imgList:[],
     type:[0],
-    upToken:''
+    upToken:'',
+    carType:''
   },
   onShow(){
     var now = new Date();
@@ -52,9 +53,27 @@ Page({
     this.setData({
       date:year + '-' + month + '-' + day
     })
-    http.requestSync("/a","GET",{c:'ccccc'}).then(res=>{
-      console.log("123456")
-      console.log(typeof res)
+    if (!getCurrentPages()[getCurrentPages().length - 1].options && !getCurrentPages()[getCurrentPages().length - 1].options.id) return;
+    this.setData({
+      title:'编辑客户'
+    })
+    const data = {
+     id:
+     getCurrentPages()[getCurrentPages().length - 1].options.id
+    }
+    http.requestSync("/customer/detail","GET",data).then(res=>{
+      if(res.code == 200){
+        this.setData({
+          code: res.content.code,
+          carType:res.content.car_type,
+          province: res.content.province,
+          mobile: res.content.mobile,
+          content: res.content.content,
+          date: res.content.date,
+          price: res.content.price,
+          type: res.content.type.split(","),
+        })
+      }
     })
   },
   openProvince(){
@@ -147,8 +166,8 @@ Page({
       pList.push(p)
     })
       Promise.all(pList).then((r)=>{
-        console.log("cxcxz")
         const data = {
+          id: getCurrentPages()[getCurrentPages().length - 1].options.id ? getCurrentPages()[getCurrentPages().length - 1].options.id : '',
           province:this.data.province,
           code:this.data.code,
           mobile:this.data.mobile,
@@ -156,11 +175,36 @@ Page({
           price:this.data.price,
           date:this.data.date,
           content:this.data.content,
-          imgList:data_bank_list
+          imgList:data_bank_list,
+          carType:this.data.car_type
         }
-        http.requestSync("/add/customer",'delete',data).then((r)=>{
-          
-        })
+        if (getCurrentPages()[getCurrentPages().length - 1].options.id){
+          http.requestSync("/customer/edit", 'PUT', data).then((res) => {
+            if(res.code == 200){
+              wx.showToast({
+                title: '修改成功',
+                icon: 'none',
+                success: () => {
+                  setTimeout(() => {
+                    wx.navigateBack()
+                  }, 1000)
+                }
+              })
+            }
+          })
+        }else{
+          http.requestSync("/customer/add", 'POST', data).then((res) => {
+            wx.showToast({
+              title: '添加成功',
+              icon: 'none',
+              success: () => {
+                setTimeout(() => {
+                  wx.navigateBack()
+                }, 1000)
+              }
+            })
+          })
+        }
       })
-  }
+  },
 })
